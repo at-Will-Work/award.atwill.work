@@ -1,0 +1,64 @@
+.errMsg {
+  display: block;
+ }
+
+.formError {
+  padding-bottom: 13px;
+  display: block; }
+
+.fixed {
+  padding-bottom: 0; }
+
+.fixed .formErrorClose {
+  display: none; }
+
+.formError .formErrorContent {
+  padding: .5em 1em;
+  position: relative;
+  color: #fff;
+  font-size: 1.3rem;
+  _z-index: 1; }
+
+.fixed .formErrorContent {
+  background: #ff9999 }
+
+.fadeOut {
+  opacity: .2;
+  filter: alpha(opacity=20); }
+
+.formError .formErrorArrow {
+  width: 15px;
+  height: 15px;
+  bottom: 0;
+  left: 20px;
+  _z-index: 0; }
+
+.fixed .formErrorArrow {
+  display: none; }
+
+.formError .formErrorArrowBottom {
+  margin: -6px;
+  top: 0; }
+
+.fixed .formErrorArrowBottom {
+  display: none; }
+  
+#err_loadfile {
+	position: absolute;
+	top: 74px;
+	width: 100%;
+	box-sizing: border-box;
+	left: 0;
+}
+
+#aww_themes_other_error {
+	display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .formError .formErrorContent {
+    padding: .5em 1em;
+    position: relative;
+    color: #fff;
+    font-size: 12px;
+    _z-index: 1; } }
