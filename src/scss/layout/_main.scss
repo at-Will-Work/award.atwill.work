@@ -1,0 +1,49 @@
+#wrap {
+	.inner {
+		padding-top: 64px;
+		padding-bottom: 64px;
+		padding-left: 15px;
+		padding-right: 15px;
+		&.gray {
+			background-color: #fbfbfb;	
+		}
+		&.gray-dark {
+			background-color: darken(#fbfbfb,2%);	
+		}
+		&.light-red {
+			background-color: rgba($red,0.1);
+		}
+		&.border-t {
+			border-top: 1px solid #EBEBEB;
+		}
+	}
+	&.form {
+		padding-top: 100px;
+	}
+	&.award-list {
+		padding-top: 100px;
+	}
+}
+
+@media only screen and (max-width: 1024px) {
+	#wrap {
+		width: 100%;
+		margin: auto;
+		.inner {
+			padding-top: 48px;
+			padding-bottom: 48px;
+		}
+	}
+}
+
+@media only screen and (max-width: 768px) {
+	#wrap {
+		.inner {
+			padding-top: 32px;
+			padding-bottom: 32px;
+		}
+		&.form {
+			padding-top: 55px;
+		}
+	}
+}

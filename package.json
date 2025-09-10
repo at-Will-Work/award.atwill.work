@@ -1,0 +1,26 @@
+{
+  "name": "award-atwill-work",
+  "version": "1.0.0",
+  "description": "Work Story Award website with SCSS compilation",
+  "main": "index.js",
+  "scripts": {
+    "build:css": "sass src/scss/award2020.scss assets/css/award2020.css --style=compressed --source-map",
+    "watch:css": "sass src/scss/award2020.scss assets/css/award2020.css --style=expanded --source-map --watch",
+    "serve": "live-server --port=3000 --open=index.html",
+    "dev": "concurrently \"npm run watch:css\" \"npm run serve\"",
+    "build": "npm run build:css",
+    "prebuild": "mkdir -p assets/css"
+  },
+  "devDependencies": {
+    "sass": "^1.77.0",
+    "live-server": "^1.2.2",
+    "concurrently": "^8.2.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/your-username/award.atwill.work.git"
+  },
+  "keywords": ["award", "website", "scss", "static-site"],
+  "author": "",
+  "license": "MIT"
+}

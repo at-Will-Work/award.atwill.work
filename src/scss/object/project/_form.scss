@@ -1,0 +1,546 @@
+.w880 {
+	width: 880px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.aform-inactive-msg {
+  font-size: 1.8rem;
+  text-align: center;
+  margin-bottom: 400px;
+  @media screen and (max-width: 768px) {
+    font-size: 1.4rem;
+  }
+}
+
+#form {
+	h1 {
+		text-align: center;
+		font-size: 2rem;
+		font-weight: normal;
+		letter-spacing: 2px;
+		margin-bottom: 0;
+	}
+	> strong {
+		display: block;
+		text-align: center;
+		font-size: 3.2rem;
+		font-family: 'Helvetica';
+		margin-bottom: 8px;
+	}
+	.lead {
+		text-align: center;
+		margin-bottom: 32px;
+		margin-top: 32px;
+		font-size: 1.5rem;
+		line-height: 1.8;
+	}
+	.error-lists {
+		padding: 3em;
+		background-color: lighten(red,40%);
+		margin-bottom: 64px;
+		color: $red;
+		p {
+			color: $red;
+			margin: 0;
+		}
+		ul {
+			margin-left: 20px;
+			li {
+				list-style: square outside;
+				font-size: 1.7rem;
+			}
+		}
+	}
+	#confirm {
+		.confirm-group {
+      margin-bottom: 32px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid #EBEBEB;
+			.label {
+				font-weight: bold;
+				display: block;
+				margin-bottom: 16px;
+				font-size: 1.6rem;
+				mark {
+					display: inline-block;
+					vertical-align: middle;
+					background-color: #f2f2f2;
+					font-weight: normal;
+					font-size: 1.1rem;
+					padding: .5em 1em;
+					margin-left: 1em;
+					&.req {
+						background-color: lighten(red,30%);
+						color: #FFF;
+					}
+				}
+				small {
+					display: inline-block;
+					line-height: 1;
+					margin-left: 1em;
+					font-weight: normal;
+					font-size: 1.3rem;
+				}
+			}
+			.confirm-data {
+				//background-color: lighten(red,45%);
+				//border: 1px solid #EBEBEB;
+				//box-shadow: 0 0 2px rgba(33,33,33,0.4);
+				//padding: 1em 0;
+				font-size: 1.6rem;
+			}
+		}
+		.submit {
+			text-align: center;
+			input[type="submit"] {
+				line-height: 50px;
+				@include appearance();
+				border-radius: 5px;
+				color: #FFF;
+				border: none;
+				background-color: $red;
+				font-size: 1.6rem;
+				font-weight: bold;
+				min-width: 300px;
+			}
+		}
+	}
+	form {
+		fieldset {
+			clear: both;
+			margin-bottom: 32px;
+			legend {
+				font-weight: bold;
+				display: block;
+				margin-bottom: 16px;
+				font-size: 1.6rem;
+				mark {
+					display: inline-block;
+					vertical-align: middle;
+					background-color: #f2f2f2;
+					font-weight: normal;
+					font-size: 1.1rem;
+					padding: .5em 1em;
+					margin-left: 1em;
+					&.req {
+						background-color: lighten(red,30%);
+						color: #FFF;
+					}
+				}
+				small {
+					display: inline-block;
+					line-height: 1;
+					margin-left: 1em;
+					font-weight: normal;
+					font-size: 1.3rem;
+				}
+			}
+			.input {
+				input[type="text"],
+				input[type="email"],
+				input[type="url"],
+				input[type="tel"] {
+					box-sizing: border-box;
+					width: 100%;
+					@include appearance();
+					background-color: #f2f2f2;
+					border: none;
+					padding: 1em;
+          font-size: 1.6rem;
+          display: block;
+          &.mini {
+            display: inline-block;
+            width: 200px;
+          }
+				}
+			}
+			.error {
+				background-color: lighten(red,30%);
+				color: #FFF;
+				font-size: 1.3rem;
+				padding: .5em 1em;
+			}
+			.textarea {
+				textarea {
+					box-sizing: border-box;
+					width: 100%;
+					@include appearance();
+					background-color: #f2f2f2;
+					border: none;
+					padding: 1em;
+					font-size: 1.6rem;
+				}
+			}
+			.select {
+				position: relative;
+				&:after {
+					position: absolute;
+					right: .5em;
+					top: .4em;
+					font-size: 3rem;
+					line-height: 1;
+					content: "\f35f";
+					font-family: "Ionicons";
+				}
+				select {
+					@include appearance();
+					width: 100%;
+					padding: 1em;
+					background-color: #f2f2f2;
+					border: none;
+					font-size: 1.6rem;
+					border-radius: 0;
+				}
+			}
+			.checkbox-wrap {
+				position: relative;
+				.checkboxes {
+					@include flex(wrap,flex-start,flex-start);
+					.group {
+						margin-right: 1em;
+						&.mr-0 {
+							margin-right: 0;
+						}
+						.checkbox {
+							display: block;
+							text-align: left;
+							box-sizing: border-box;
+							position: relative;
+							background-color: #f5f5f5;
+							vertical-align: middle;
+							cursor: pointer;
+							width: 100%;
+							font-size: 1.4rem;
+							line-height: 40px;
+							font-weight: normal;
+							white-space: nowrap;
+							border-radius: 40px;
+							padding-left: 1em;
+							padding-right: 1em;
+							margin-bottom: 12px;
+							&:before {
+								font-family: "Ionicons";
+								content: "\f372";
+								margin-right: .5em;
+							}
+
+						}
+						input[type="checkbox"] {
+							display: none;
+							&:checked + .checkbox {
+								background-color: $red;
+								color: #FFF;
+								&:before {
+									font-family: "Ionicons";
+									content: "\f373";
+								}
+							}
+						}
+					}
+				}
+			}
+			.radio-wrap {
+				position: relative;
+				.radios {
+					@include flex(wrap,flex-start,flex-start);
+					.group {
+						margin-right: 1em;
+						&.mr-0 {
+							margin-right: 0;
+						}
+						.radio {
+							display: block;
+							text-align: left;
+							box-sizing: border-box;
+							position: relative;
+							background-color: #f5f5f5;
+							vertical-align: middle;
+							cursor: pointer;
+							width: 100%;
+							font-size: 1.4rem;
+							font-weight: normal;
+							white-space: nowrap;
+							border-radius: 40px;
+							line-height: 40px;
+							padding-left: 1em;
+							padding-right: 1em;
+							margin-bottom: 12px;
+							&:before {
+								font-family: "Ionicons";
+								content: "\f3a6";
+								margin-right: .5em;
+							}
+
+						}
+						input[type="radio"] {
+							display: none;
+							&:checked + .radio {
+								background-color: $red;
+								color: #FFF;
+								&:before {
+									font-family: "Ionicons";
+									content: "\f3a7";
+								}
+							}
+						}
+					}
+				}
+			}
+			.file {
+				.upload {
+					background-color: #f2f2f2;
+					border: none;
+					padding: 1em;
+					font-size: 1.6rem;
+					position: relative;
+					@include flex(nowrap,flex-start,center);
+					input[type="file"] {
+						position: absolute;
+						top: 0;
+						left: 0;
+						width: 100%;
+						height: 100%;
+						cursor: pointer;
+						opacity: 0;
+						z-index: 2;
+						border-radius: 0;
+					}
+					i {
+						display: block;
+						line-height: 1;
+					}
+					.upload-wrap {
+						position: relative;
+						flex: 1;
+						margin-left: 16px;
+						background-color: #FFF;
+						.uploadvalue {
+							margin: 0;
+							box-sizing: border-box;
+							font-size: 1.4rem;
+							padding: .5em 1em;
+						}
+					}
+				}
+			}
+		}
+		.submit {
+			text-align: center;
+			input[type="submit"] {
+				line-height: 50px;
+				@include appearance();
+				border-radius: 5px;
+				color: #FFF;
+				border: none;
+				background-color: $red;
+				font-size: 1.6rem;
+				font-weight: bold;
+				min-width: 300px;
+			}
+		}
+		.caution {
+			margin-top: 64px;
+			margin-bottom: 64px;
+			h2 {
+				font-size: 1.6rem;
+				margin-bottom: 32px;
+			}
+			ul {
+				li {
+					font-size: 1.3rem;
+					margin-bottom: 16px;
+					&:last-child {
+						margin-bottom: 0;
+					}
+				}
+			}
+		}
+	}
+	input,
+	textarea {
+		@include appearance();
+		border: none;
+	}
+}
+
+@media only screen and (max-width: 1024px) {
+	.w880 {
+		width: auto;
+		margin-left: 0;
+		margin-right: 0;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	#form {
+		> strong {
+			font-size: 2rem;
+			margin-bottom: 4px;
+		}
+		h1 {
+			font-size: 1.4rem;
+		}
+		.lead {
+			text-align: center;
+			font-size: 1.3rem;
+		}
+		.error-lists {
+			padding: 2em;
+			margin-bottom: 32px;
+			color: $red;
+			p {
+				color: $red;
+				margin: 0;
+			}
+			ul {
+				margin-left: 20px;
+				li {
+					list-style: square outside;
+					font-size: 1.4rem;
+				}
+			}
+		}
+		form {
+			fieldset {
+				margin-bottom: 24px;
+				legend {
+					font-weight: bold;
+					display: block;
+					margin-bottom: 12px;
+					font-size: 1.3rem;
+					display: block;
+					mark {
+						background-color: #f2f2f2;
+						font-weight: normal;
+						font-size: 0.9rem;
+						padding-top: 0;
+						padding-bottom: 0;
+						padding-left: .8em;
+						padding-right: .8em;
+						line-height: 18px;
+						margin-left: .5em;
+						position: relative;
+						top: -1px;
+					}
+					small {
+						display: block;
+						margin-top: 6px;
+						margin-left: 0;
+						font-size: 1.2rem;
+					}
+				}
+				.input {
+					input[type="text"],
+					input[type="email"],
+					input[type="url"],
+					input[type="tel"] {
+						padding: .8em;
+            font-size: 1.3rem;
+            &.mini {
+              width: 49%;
+            }
+          }
+				}
+				.textarea {
+					textarea {
+						padding: .8em;
+						font-size: 1.4rem;
+						height: 200px;
+					}
+				}
+				.select {
+					position: relative;
+					&:after {
+						position: absolute;
+						right: .5em;
+						top: .4em;
+						font-size: 2rem;
+						line-height: 1;
+						content: "\f35f";
+						font-family: "Ionicons";
+					}
+					select {
+						padding: .8em;
+						font-size: 1.3rem;
+					}
+				}
+				.checkbox-wrap {
+					.checkboxes {
+						display: block;
+						.group {
+							margin-bottom: 6px;
+							margin-right: 0;
+							&:last-of-type {
+								margin-bottom: 0;
+							}
+							.checkbox {
+								font-size: 1.2rem;
+								line-height: 30px;
+                border-radius: 0;
+                white-space: normal;
+							}
+						}
+					}
+				}
+				.radio-wrap {
+					.radios {
+						display: block;
+						.group {
+							margin-bottom: 6px;
+							margin-right: 0;
+							&:last-of-type {
+								margin-bottom: 0;
+							}
+							.radio {
+								line-height: 30px;
+								font-size: 1.2rem;
+                border-radius: 0;
+                white-space: normal;
+							}
+						}
+					}
+				}
+				.file {
+					.upload {
+						padding: .8em;
+						font-size: 1.3rem;
+						@include flex(nowrap,flex-start,center);
+						.upload-wrap {
+							margin-left: 8px;
+							.uploadvalue {
+								font-size: 1.2rem;
+								padding: .2em 1em;
+							}
+						}
+					}
+				}
+			}
+			.submit {
+				input[type="submit"] {
+					line-height: 50px;
+					font-size: 1.5rem;
+					min-width: auto;
+					width: 100%;
+				}
+			}
+			.caution {
+				margin-top: 32px;
+				margin-bottom: 32px;
+				h2 {
+					font-size: 1.4rem;
+					margin-bottom: 16px;
+				}
+				ul {
+					li {
+						font-size: 1.1rem;
+						margin-bottom: 12px;
+						&:last-child {
+							margin-bottom: 0;
+						}
+					}
+				}
+			}
+		}
+	}
+}

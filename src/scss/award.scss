@@ -1,0 +1,56 @@
+// ==========================================================================
+// Foundation
+// ==========================================================================
+
+@import "_reset";
+@import "foundation/mixin";
+@import url(//fonts.googleapis.com/css?family=Roboto%7COpen+Sans:400,300,600,700,800,300italic,400italic,400,300,600,700%7CRaleway:300,400,700%7CQuicksand:400,700o%7CLato%7CDosis|Abel%7CSlabo);
+@import url(//fonts.googleapis.com/earlyaccess/mplus1p.css);
+@import url(//fonts.googleapis.com/earlyaccess/notosansjp.css);
+
+html {
+	overflow-x:hidden;
+	overflow-y:auto;
+	font-size: 62.5%;
+}
+
+body {
+	font-family: "Helvetica","Noto Sans JP","Yu Gothic",YuGothic,"ヒラギノ角ゴシック Pro","Hiragino Kaku Gothic Pro","メイリオ",Meiryo,Osaka,"ＭＳ Ｐゴシック","MS PGothic",sans-serif;
+	font-size: 10px;
+	font-size: 1.0rem; 
+	line-height: 1.5;
+	color: #696969;
+	padding: 20px;
+	margin: 0;
+	background-color: #FFF;
+	letter-spacing: normal;
+	-webkit-font-smoothing: none; //ぎざぎざ
+    -webkit-font-smoothing: antialiased; //なめらか
+    -webkit-font-smoothing: subpixel-antialiased;
+    -moz-osx-font-smoothing: grayscale; //なめらか
+    -moz-osx-font-smoothing: unset; //デフォルトに戻す
+    -moz-osx-font-smoothing: inherit; //親要素から継承
+    -moz-osx-font-smoothing: auto; //システムのデフォルトに応じる
+
+	font-size: 1.6rem;
+	line-height: 1.8;
+	font-weight: 400;
+	
+	figure,
+	blockquote,
+	p {
+		display: block;
+		margin-bottom: 48px;
+	}
+	h2 {
+		font-size: 2.4rem;
+		color: $black;
+		font-weight: 600;
+		margin-bottom: 24px;
+	}
+	blockquote {
+		font-style: italic;
+		padding-left: 24px;
+		padding-right: 24px;
+	}
+}

@@ -1,0 +1,646 @@
+// ==========================================================================
+// Foundation
+// ==========================================================================
+
+@import "_reset";
+@import "foundation/mixin";
+@import url(//fonts.googleapis.com/css?family=Roboto%7COpen+Sans:400,300,600,700,800,300italic,400italic,400,300,600,700%7CRaleway:300,400,700%7CQuicksand:400,700o%7CLato%7CDosis|Abel%7CSlabo);
+@import url(//fonts.googleapis.com/earlyaccess/mplus1p.css);
+@import url(//fonts.googleapis.com/earlyaccess/notosansjp.css);
+
+html {
+	overflow-x:hidden;
+	overflow-y:auto;
+	font-size: 62.5%;
+}
+
+body {
+	font-family: "Helvetica","Noto Sans JP","Yu Gothic",YuGothic,"ヒラギノ角ゴシック Pro","Hiragino Kaku Gothic Pro","メイリオ",Meiryo,Osaka,"ＭＳ Ｐゴシック","MS PGothic",sans-serif;
+	font-size: 10px;
+	font-size: 1.0rem; 
+	line-height: 1.5;
+	color: #696969;
+	padding: 20px;
+	margin: 0;
+	background-color: #FFF;
+	letter-spacing: normal;
+	-webkit-font-smoothing: none; //ぎざぎざ
+    -webkit-font-smoothing: antialiased; //なめらか
+    -webkit-font-smoothing: subpixel-antialiased;
+    -moz-osx-font-smoothing: grayscale; //なめらか
+    -moz-osx-font-smoothing: unset; //デフォルトに戻す
+    -moz-osx-font-smoothing: inherit; //親要素から継承
+    -moz-osx-font-smoothing: auto; //システムのデフォルトに応じる
+
+	a {
+		text-decoration: underline;
+		color: $red;
+		img,
+		svg {
+			border: none;
+			vertical-align: bottom;
+		}
+	}
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		margin-bottom: 2em;
+		text-align: center;
+		line-height: 1;
+	}
+	h2 {
+		font-size: 3.6rem;
+		&.mb-0 {
+			margin-bottom: .2em;
+		}
+		&.mb-1 {
+			margin-bottom: .6em;
+		}
+		mark {
+			display: inline-block;
+			background: none;
+			vertical-align: middle;
+			margin-right: 16px;
+			svg {
+				width: 60px;
+				.st0-100{
+					fill: #F02800;
+				}
+			}		
+		}
+		span {
+			display: inline-block;
+			vertical-align: middle;
+		}
+	}
+	.sub {
+		font-size: 2.8rem;
+		font-weight: normal;
+		display: block;
+		text-align: center;
+		margin-bottom: 2em;
+	}
+	h4 {
+		text-align: center;
+		font-size: 2.6rem;
+		line-height: 1;
+		color: $red;
+		letter-spacing: 1px;
+		&.mt-64 {
+			margin-top: 64px;
+		}
+	}
+	p {
+		color: lighten($black,30%);
+		font-size: 1.7rem;
+		line-height: 2;
+		margin-bottom: 3em;
+		&.last {
+			margin-bottom: 2em;
+		}
+		&.caution {
+			border-top: 1px solid #EBEBEB;
+			font-size: 1.4rem;
+			padding-top: 32px;
+			margin-bottom: 64px;
+		}
+	}
+	ul,
+	ol {
+		margin-left: 20px;
+		color: lighten($black,30%);
+		font-size: 1.7rem;
+		line-height: 2;
+		margin-bottom: 3em;		
+	}
+	ul {
+		li {
+			list-style: square outside;
+		}
+	}
+	ol {
+		li {
+			list-style: decimal outside;
+		}
+	}
+	dl {
+		box-sizing: border-box;
+		@include flex(nowrap,space-between,center);
+		padding: .5em;
+		font-size: 1.7rem;
+		color: lighten($black,30%);
+		&:nth-of-type(even) {
+			background-color: rgba($red,0.1);
+		}
+		dt,
+		dd {
+			padding: .5em;
+			> strong {
+				display: block;
+				font-weight: normal;
+			}
+		}
+		dt {
+			flex-basis: 25%;
+		}
+		dd {
+			flex: 1;
+			
+		}
+	}
+	table {
+		width: 100%;
+		box-sizing: border-box;
+		table-layout: fixed;
+		border-collapse: collapse;
+		tbody {
+			display: table-row-group;
+			tr {
+				display: table-row;
+				th,
+				td {
+					padding: .5em;
+					font-size: 1.7rem;
+					color: lighten($black,30%);
+					> strong {
+						display: block;
+						font-weight: normal;
+					}
+				}
+				&:nth-of-type(even) {
+					th,td {
+						background-color: rgba($red,0.1);
+					}
+				}
+				th {
+					width: 25%;
+				}
+				td {
+					width: 75%;
+				}
+			}
+		}
+		
+	}
+	.caption {
+		line-height: 1;
+		margin: 0;
+		text-align: center;
+	}
+	&#detail,
+	&#sponsors {
+		h3 {
+			text-align: center;
+			font-size: 2.6rem;
+			line-height: 1;
+			color: $red;
+			letter-spacing: 1px;
+		}
+		hr {
+			height: 1px;
+			border: none;
+			background-color: #CCC;
+			width: 400px;
+			margin: 32px auto;
+		}
+		.detail-head {
+			margin-bottom: 32px;
+			text-align: center;
+			@include flex(nowrap,center,center);
+			strong {
+				display: block;
+				font-size: 2rem;
+			}
+			p {
+				@include flex(nowrap,flex-start,center);
+				margin: 0 0 0 1em;
+				font-size: 2rem;
+				i {
+					display: block;
+					margin-right: .5em;
+				}
+			}
+		}
+		.detail {
+			width: 80%;
+			margin-top: 64px;
+			margin-left: auto;
+			margin-right: auto;
+			box-sizing: border-box;
+			h4 {
+				font-size: 2.4rem;
+				letter-spacing: 1px;
+				color: $black;
+				&.caution {
+					color: $red;
+					margin-top: 48px;
+					font-size: 1.8rem;
+				}
+			}
+			h5 {
+				font-size: 2rem;
+				display: block;
+				margin-bottom: 32px;
+				letter-spacing: 1px;
+				background-color: #EBEBEB;
+				padding: 1em;
+				line-height: 1;
+				text-align: left;
+				small {
+					display: inline-block;
+					margin-left: 16px;
+					font-size: 1.4rem;
+					font-weight: normal;
+				}
+			}
+			h6 {
+				font-size: 1.7rem;
+				text-align: left;
+				font-weight: normal;
+				letter-spacing: 1px;
+				margin-bottom: 32px;
+				color: $red;
+				border-left: 5px solid $red;
+				padding-left: 10px;
+				line-height: 1.6;
+				font-weight: 500;
+				small {
+					font-weight: 300;
+					display: inline-block;
+					margin-left: 20px;
+					font-size: 1.3rem;
+				}
+			}
+			> hr {
+				height: 1px;
+				background-color: $black;
+				width: 200px;
+				margin-bottom: 32px;
+				margin-top: 32px;				
+			}
+			.detail-wrap {
+				margin-bottom: 64px;
+				.target {
+					padding: 3em;
+					box-sizing: border-box;
+					@include flex(nowrap,space-between,flex-start);
+					strong {
+						display: block;
+						width: 30%;
+						font-size: 1.6rem;
+						color: $black;
+						text-align: left;
+						line-height: 1.8;
+						letter-spacing: 1px;
+					}
+					p {
+						flex: 1;
+						font-size: 1.6rem;
+						margin-top: 0;
+						margin-bottom: 0;
+					}
+				}
+				hr {
+					height: 1px;
+					background-color: #CCC;
+					width: 100%;
+					margin-bottom: 16px;
+					margin-top: 16px;
+				}		
+			}
+			.guest {
+				@include flex(wrap,flex-start,stretch);
+				figure {
+					box-sizing: border-box;
+					flex-basis: 33%;
+					padding: 16px;
+					strong {
+						display: block;
+						margin-bottom: 16px;
+						font-size: 1.7rem;
+						text-align: center;
+					}
+					small {
+						display: block;
+						font-size: 1.3rem;
+						margin-bottom: 32px;
+						color: lighten($black,30%);
+						text-align: center;
+					}
+					p {
+						font-size: 1.3rem;
+						margin-bottom: 0;
+					}
+				}
+			}			
+			.guest + hr {
+				margin: 16px 0;
+				width: 100%;
+				background-color: #CCC;
+				border: none;
+			}
+			.guest-list {
+				margin-bottom: 32px;
+				padding-bottom: 32px;
+				border-bottom: 1px solid #EBEBEB;
+				li {
+					margin-left: 24px;
+					list-style: square outside;
+					font-size: 1.7rem;
+					color: lighten($black,30%);
+					margin-bottom: .5em;
+					&:last-child {
+						margin-bottom: 0;
+					}
+				}
+			}
+			.supportform {
+				text-align: center;
+				margin-top: 32px;
+				iframe {
+					width: 100%;
+					min-height: 500px;
+				}
+			}
+			> ol {
+				margin-top: 32px;
+				> li {
+					list-style: none;
+					> strong {
+						font-size: 2rem;
+						display: block;
+						margin-bottom: 16px;
+						letter-spacing: 1px;
+					}
+					.theme {
+						> strong {
+							font-size: 2rem;
+							display: block;
+							margin-bottom: 32px;
+							text-align: center;
+							letter-spacing: 1px;
+							background-color: #EBEBEB;
+							padding: 1em;
+							line-height: 1;
+						}
+						ol {
+							@include flex(wrap,center,stretch);
+							li {
+								width: 45%;
+								box-sizing: border-box;
+								&:nth-child(even) {
+									margin-left: 5%;
+								}
+								strong {
+									display: inline-block;
+									font-size: 1.8rem;
+									margin-bottom: 16px;
+								}
+							}
+						}						
+					}
+				}
+			}
+			.download {
+				margin: 32px 0;
+				ul {
+					li {
+						font-size: 1.6rem;
+						margin-bottom: .5em;
+					}
+				}
+			}
+			#sample-slide {
+				margin: 64px 0;				
+				> strong {
+					font-size: 2rem;
+					display: block;
+					margin-bottom: 32px;
+					letter-spacing: 1px;
+					background-color: #EBEBEB;
+					padding: 1em;
+					line-height: 1;
+				}
+				#slide-wrapper {
+					position: relative;
+					> a {
+						position: absolute;
+						z-index: 2;
+						top: 40%;
+						width: 32px;
+						height: 32px;
+						line-height: 32px;
+						background-color: #EBEBEB;
+						display: block;
+						text-align: center;
+						border-radius: 100%;
+						box-shadow: 0 0 5px rgba(0,0,0,0.2);
+						color: #333;
+						i {
+							font-size: 1.6rem;
+							position: relative;
+							top: 0;			
+						}
+						&.slick-prev {
+							left: 14px;
+						}
+						&.slick-next {
+							right: 14px;
+						}
+					}
+					.slide-sample {
+						width: 100%;
+						@include flex(nowrap,flex-start,stretch);
+						li {
+							box-sizing: border-box;							
+							.samples {
+								padding: 10px;
+								box-sizing: border-box;
+								border: 1px solid #EBEBEB;	
+								img {
+									display: block;
+									width: 100%;
+									
+								}								
+							}
+						}
+					}
+					.nums {
+						margin-top: 32px;
+						ul {
+							@include flex(nowrap,center,center);
+							li {
+								margin: 0 10px;
+								a {
+									text-decoration: none;
+									display: block;
+									background-color: $red;
+									font-size: 1.6rem;
+									width: 30px;
+									line-height: 30px;
+									height: 30px;
+									overflow: hidden;
+									text-align: center;
+									border-radius: 100%;
+									color: #FFF;
+									outline : none;
+								}
+								&.slick-active {
+									a {
+										background-color: #EBEBEB;
+										font-weight: bold;
+									}
+								}
+							}
+						}				
+					}					
+				}
+			}
+			.howto {
+				strong {
+					font-size: 2rem;
+					display: block;
+					margin-bottom: 32px;
+					letter-spacing: 1px;
+					background-color: #EBEBEB;
+					padding: 1em;
+					line-height: 1;
+				}
+				.contact-info {
+					> strong {
+						letter-spacing: normal;
+						font-size: 1.7rem;
+						display: block;
+						margin-bottom: 1em;
+						background: none;
+						padding: 0;
+						font-weight: normal;
+						small {
+							font-size: 0.8em;
+						}
+					}
+					ul {
+						li {
+							font-size: 1.7rem;
+						}
+					}					
+				}
+			}
+		}		
+	}
+	.company-logo {
+		&.support {
+			border-top: 1px solid #EBEBEB;
+			padding-top: 64px;
+			margin-top: 64px;
+		}
+		h4 {
+			color: $black;
+			font-size: 2.4rem;
+			letter-spacing: 1px;
+		}
+		hr {
+			height: 1px;
+			background-color: $black !important;
+			width: 200px !important;
+			margin-bottom: 32px !important;
+			margin-top: 32px !important;				
+		}
+		.logos {
+			padding: 24px 0;
+			@include flex(wrap,center,stretch);
+			a {
+				text-align: center;
+				display: block;
+				color: $black;
+				text-decoration: none;
+				width: 150px;
+				margin: 0 3em;
+				figure {					
+					.img {
+						margin-left: auto;
+						margin-right: auto;
+						@include background(center,center);
+						width: 100px;
+						height: 100px;
+						img {
+							max-width: 100%;
+						}
+					}
+					figcaption {
+						display: block;
+						margin-top: 16px;
+						letter-spacing: 1px;
+						font-size: 1.3rem;
+						line-height: 1.4;
+					}
+				}
+			}
+			&.big {
+				a {
+					width: 200px;
+					figure {					
+						.img {
+							width: 200px;
+							height: 200px;
+						}
+						figcaption {
+							font-size: 1.5rem;
+						}
+					}					
+				}
+			}
+			&.long {
+				a {
+					width: 200px;
+					figure {
+						.img {
+							width: 200px;
+							height: 70px;
+						}
+					}					
+				}
+			}
+		}
+	}
+	.button {
+		margin-top: 64px;
+		margin-bottom: 64px;
+		text-align: center;
+		a {
+			text-decoration: none;
+			display: inline-block;
+			font-size: 1.6rem;
+			font-weight: bold;
+			letter-spacing: 1px;
+			line-height: 1;
+			background-color: $red;
+			padding: 1.5em 0;
+			width: 100%;
+			margin-top: 32px;
+			margin-bottom: 32px;
+			margin-left: auto;
+			margin-right: auto;
+			color: #FFF;
+			border-radius: 5px;
+			box-shadow: 0 0 10px 0 rgba(202,202,202,0.9);
+			@include flex(nowrap,center,center);
+			i {
+				font-size: 3rem;
+				margin-right: .5em;
+			}
+		}
+	}
+	.end {
+		text-align: center;
+		background-color: rgba($red,0.1);
+		color: $red;
+		margin-top: 64px;
+		margin-bottom: 64px;
+		font-size: 1.6rem;
+		padding: 24px;
+	}
+}
